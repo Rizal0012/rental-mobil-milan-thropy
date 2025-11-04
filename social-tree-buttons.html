@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Tree - Sosial Media</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-color: transparent;
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .link-btn:hover::before {
+            opacity: 1;
+        }
+
+        .link-btn .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-btn .text {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Instagram */
+        .instagram::before {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .instagram:hover {
+            color: white;
+        }
+
+        /* Facebook */
+        .facebook::before {
+            background: #1877f2;
+        }
+
+        .facebook:hover {
+            color: white;
+        }
+
+        /* Twitter/X */
+        .twitter::before {
+            background: #000000;
+        }
+
+        .twitter:hover {
+            color: white;
+        }
+
+        /* YouTube */
+        .youtube::before {
+            background: #ff0000;
+        }
+
+        .youtube:hover {
+            color: white;
+        }
+
+        /* TikTok */
+        .tiktok::before {
+            background: linear-gradient(45deg, #00f2ea, #ff0050);
+        }
+
+        .tiktok:hover {
+            color: white;
+        }
+
+        /* LinkedIn */
+        .linkedin::before {
+            background: #0077b5;
+        }
+
+        .linkedin:hover {
+            color: white;
+        }
+
+        /* WhatsApp */
+        .whatsapp::before {
+            background: #25d366;
+        }
+
+        .whatsapp:hover {
+            color: white;
+        }
+
+        /* Website */
+        .website::before {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .website:hover {
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .profile h1 {
+                font-size: 20px;
+            }
+
+            .link-btn {
+                padding: 15px 20px;
+                font-size: 15px;
+            }
+
+            .link-btn .icon {
+                width: 25px;
+                height: 25px;
+                font-size: 18px;
+                margin-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-img">JD</div>
+            <h1>John Doe</h1>
+            <p>Content Creator & Digital Marketer</p>
+        </div>
+
+        <div class="links">
+            <a href="#" class="link-btn instagram">
+                <div class="icon">📷</div>
+                <div class="text">Instagram</div>
+            </a>
+
+            <a href="#" class="link-btn facebook">
+                <div class="icon">📘</div>
+                <div class="text">Facebook</div>
+            </a>
+
+            <a href="#" class="link-btn twitter">
+                <div class="icon">🐦</div>
+                <div class="text">Twitter / X</div>
+            </a>
+
+            <a href="#" class="link-btn youtube">
+                <div class="icon">▶️</div>
+                <div class="text">YouTube</div>
+            </a>
+
+            <a href="#" class="link-btn tiktok">
+                <div class="icon">🎵</div>
+                <div class="text">TikTok</div>
+            </a>
+
+            <a href="#" class="link-btn linkedin">
+                <div class="icon">💼</div>
+                <div class="text">LinkedIn</div>
+            </a>
+
+            <a href="#" class="link-btn whatsapp">
+                <div class="icon">💬</div>
+                <div class="text">WhatsApp</div>
+            </a>
+
+            <a href="#" class="link-btn website">
+                <div class="icon">🌐</div>
+                <div class="text">Website</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

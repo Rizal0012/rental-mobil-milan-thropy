@@ -11,19 +11,34 @@
             color: white;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
+            margin: 0;
         }
         .container {
             background: #f0f0f0;
             border-radius: 15px;
-            width: 320px;
+            width: 100%;
+            max-width: 320px; /* Responsif: max-width untuk layar besar, tapi tetap kompak di mobile */
             padding: 20px;
             text-align: center;
             color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambah shadow untuk efek stylish */
         }
         .logo {
-           
             margin-bottom: 20px;
+        }
+        .logo img {
+            width: 80px; /* Ukuran logo responsif, bisa disesuaikan */
+            height: auto;
+            border-radius: 10px; /* Tambah border-radius untuk style */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow untuk logo */
+        }
+        .logo h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            color: #333;
         }
         .button {
             display: block;
@@ -33,6 +48,10 @@
             color: white;
             font-size: 16px;
             text-decoration: none;
+            transition: transform 0.2s ease; /* Tambah transisi untuk efek hover */
+        }
+        .button:hover {
+            transform: scale(1.05); /* Efek hover untuk interaktivitas */
         }
         .whatsapp { background-color: #25D366; }
         .blue { background-color: #3498db; }
@@ -46,12 +65,35 @@
         .button span {
             margin-right: 8px;
         }
+
+        /* Responsivitas: Media queries untuk layar berbeda */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 400px; /* Lebih lebar di tablet/desktop */
+                padding: 30px;
+            }
+            .logo img {
+                width: 100px; /* Logo lebih besar di layar besar */
+            }
+            .logo h2 {
+                font-size: 2em;
+            }
+            .button {
+                font-size: 18px;
+                padding: 15px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 500px; /* Lebih lebar lagi di desktop */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <img src="logo.png"></img>
+            <img src="logo.png" alt="Logo Keliling Jogja Package"> <!-- Tambah alt untuk aksesibilitas -->
             <h2>Keliling Jogja Package</h2>
         </div>
         <a href="https://wa.me/6285764251029" class="button whatsapp">
